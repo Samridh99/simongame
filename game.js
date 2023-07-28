@@ -12,7 +12,7 @@ var randomNumber=Math.random()*3;
 randomNumber=Math.round(randomNumber);
 var randomChosenColour=buttonColors[randomNumber];
 $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-var audio = new Audio("sounds/"+randomChosenColour+".mp3");
+var audio = new Audio(randomChosenColour+".mp3");
 audio.play();
 gamePattern.push(randomChosenColour);
 return randomNumber;
@@ -61,7 +61,7 @@ function checkAnswer(currentLevel) {
     setTimeout(function(){
       $("body").removeClass("game-over") 
     },200);
-    var audio = new Audio("sounds/wrong.mp3");
+    var audio = new Audio("wrong.mp3");
 audio.play();
     startOver();
 
@@ -87,7 +87,7 @@ $(".btn").click(function() {
 var userChosenColour=$(this).attr("id");
 $("#"+userChosenColour).fadeOut(30).fadeIn(30);
 animatePress(userChosenColour);
-var audio = new Audio("sounds/"+userChosenColour+".mp3");
+var audio = new Audio(userChosenColour+".mp3");
 audio.play();
 animatePress();
   userClickedPattern.push(userChosenColour);
